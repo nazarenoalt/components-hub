@@ -1,11 +1,13 @@
 
 import { AppContext } from "../context/appContext";
 import { useContext } from "react";
-import SidebarItem from "./SidebarItem";
 
 const Sidebar = () => {
-  const { selectedComponent, setSelectedComponent, sidebarItems } = useContext(AppContext);
-  console.log(sidebarItems);
+  const {setSelectedComponent, sidebarItems } = useContext(AppContext);
+
+  const handleComponentLists = (e) => {
+    setSelectedComponent(sidebarItems.filter(item => item.name === e.target.getAttribute("name"))[0]?.component)
+  }
 
   return (
     <section className="bg-blue-500 w-60 h-screen p-4">
@@ -17,7 +19,9 @@ const Sidebar = () => {
         {sidebarItems.map((item, index)=> {
           return(
             <li key={index}>
-              <SidebarItem name={item.name} component={item.component} />
+              <div role="button" name={item.name} className="text-white border-b pt-4 hover:bg-blue-600 transition-all" onClick={handleComponentLists}>
+                <span>{item.name}</span>
+              </div>
             </li>
           )
         })}

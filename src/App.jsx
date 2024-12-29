@@ -1,3 +1,4 @@
+import ComponentRenderer from "./components/ComponentRenderer"
 import Sidebar from "./components/Sidebar"
 import { AppProvider } from "./context/appContext"
 
@@ -5,7 +6,10 @@ function App() {
 
   return (
     <AppProvider>
-      <Sidebar />
+      <div className="flex">
+        <Sidebar />
+        <ComponentRenderer />
+      </div>
     </AppProvider>
   )
 }
