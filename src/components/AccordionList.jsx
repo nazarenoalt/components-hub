@@ -1,6 +1,9 @@
+import Accordion from '../components/Accordion';
 const AccordionList = () => {
   return (
-    <div>AccordionList</div>
+    <div>
+      <Accordion />
+    </div>
   )
 }
 

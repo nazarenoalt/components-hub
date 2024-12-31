@@ -2,11 +2,10 @@ import { useContext } from "react";
 import { AppContext } from "../context/appContext";
 
 const ComponentRenderer = () => {
-  // Acceder al contexto con useContext
   const { selectedComponent } = useContext(AppContext);
 
   return (
-    <div className="p-4">
+    <div className="w-screen h-full bg-gray-900 text-white p-4">
       {selectedComponent ? (
         selectedComponent
       ) : (

@@ -6,7 +6,7 @@ function App() {
 
   return (
     <AppProvider>
-      <div className="flex">
+      <div className="flex w-screen h-screen">
         <Sidebar />
         <ComponentRenderer />
       </div>
