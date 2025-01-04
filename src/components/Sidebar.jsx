@@ -3,10 +3,11 @@ import { AppContext } from "../context/appContext";
 import { useContext } from "react";
 
 const Sidebar = () => {
-  const {setSelectedComponent, sidebarItems } = useContext(AppContext);
+  const {selectedComponent, setSelectedComponent, sidebarItems } = useContext(AppContext);
 
   const handleComponentLists = (e) => {
-    setSelectedComponent(sidebarItems.filter(item => item.name === e.target.getAttribute("name"))[0]?.component)
+    const clickedComponent = sidebarItems.filter(item => item.name === e.target.getAttribute("name"))[0]?.component;
+    setSelectedComponent(clickedComponent)
   }
 
   return (

@@ -1,18 +1,20 @@
 import { createContext, useState } from "react";
-import ButtonList from "../components/ButtonList";
-import AccordionList from"../components/AccordionList";
+import ButtonPage from "../pages/ButtonPage";
+import AccordionPage from"../pages/AccordionPage";
+import DropdownPage from"../pages/DropdownPage";
 
 export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
-  const [selectedComponent, setSelectedComponent] = useState("");
+  const [selectedComponent, setSelectedComponent] = useState(ButtonPage);
 
   const contextValue = {
     selectedComponent,
     setSelectedComponent,
     sidebarItems: [
-      {name: "Accordion", component: <AccordionList />},
-      {name: "Button", component: <ButtonList />},
+      {name: "Accordion", component: <AccordionPage />},
+      {name: "Button", component: <ButtonPage />},
+      {name: "Dropdown", component: <DropdownPage />},
     ]
   }
 

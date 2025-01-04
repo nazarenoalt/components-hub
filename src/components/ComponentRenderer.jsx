@@ -6,11 +6,7 @@ const ComponentRenderer = () => {
 
   return (
     <div className="w-screen h-full bg-gray-900 text-white p-4">
-      {selectedComponent ? (
-        selectedComponent
-      ) : (
-        <p>Selecciona un componente del menú lateral</p>
-      )}
+      {selectedComponent}
     </div>
   );
 };
