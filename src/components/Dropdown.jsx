@@ -24,11 +24,16 @@ const Dropdown = ({ options, value, onChange }) => {
       >
           {value.label || "Select..."}
       </div>
-      <div
-        className={`flex flex-col border rounded bg-white text-black w-fit min-w-28 absolute ${isOpen ? "visible" : "invisible"}`}
-      >{options.map((option, index) => (
-        <div key={index} tabIndex="0" className="hover:bg-blue-500 px-2" onClick={e => handleSelectOption(e, option)} onKeyDown={e => handleSelectOption(e, option)}>{option.label}</div>
-      ))}</div>
+      <div>
+        <div
+          className={`flex flex-col border rounded bg-white text-black w-fit min-w-28 absolute ${isOpen && "hidden"}`}
+        >
+          {options.map((option, index) => (
+            <div key={index} tabIndex="0" className="hover:bg-blue-500 px-2 z-10" onClick={e => handleSelectOption(e, option)} onKeyDown={e => handleSelectOption(e, option)}>{option.label}</div>
+          ))}
+        </div>
+        <div className={`absolute inset-0 cursor-pointer ${isOpen && "hidden"}`} onClick={e => toggleDropdown(e)}></div>
+      </div>
     </div>
   )
 }
