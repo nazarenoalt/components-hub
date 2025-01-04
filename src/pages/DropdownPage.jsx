@@ -13,20 +13,6 @@ const DropdownPage = () => {
   return (
     <div>
       <Dropdown options={items} value={selection} onChange={setSelection} />
-      <ul>
-      <li>
-          example
-        </li>
-        <li>
-          example
-        </li>
-        <li>
-          example
-        </li>
-        <li>
-          example
-        </li>
-      </ul>
     </div>
   )
 }
