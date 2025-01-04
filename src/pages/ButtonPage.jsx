@@ -2,14 +2,10 @@ import Button from "../components/Button"
 
 const ButtonList = () => {
 
-  const handleClick = () => {
-    console.log('jajaja LOL')
-  }
-
   return (
     <div>
       <div className="flex gap-2">
-        <Button type="primary" onClick={handleClick} className="bg-red-500">Click me</Button>
+        <Button type="primary" className="bg-red-500">Click me</Button>
         <Button type="warn">Click me</Button>
         <Button type="alert">Click me</Button>
         <Button type="green">Click me</Button>
