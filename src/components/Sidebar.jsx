@@ -31,7 +31,7 @@ const Sidebar = () => {
               }`}
               onClick={handleComponentLists}
             >
-              <span>{item.name}</span>
+              {item.name}
             </div>
           </li>
         ))}
