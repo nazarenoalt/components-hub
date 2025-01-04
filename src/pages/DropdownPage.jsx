@@ -2,7 +2,7 @@ import { useState } from "react"
 import Dropdown from "../components/Dropdown"
 
 const DropdownPage = () => {
-  const [selection, setSelection] = useState(null);
+  const [selection, setSelection] = useState({});
   const items = [
     {label: "Argentina", value: "argentina"},
     {label: "Chile", value: "chile"},
@@ -13,6 +13,20 @@ const DropdownPage = () => {
   return (
     <div>
       <Dropdown options={items} value={selection} onChange={setSelection} />
+      <ul>
+      <li>
+          example
+        </li>
+        <li>
+          example
+        </li>
+        <li>
+          example
+        </li>
+        <li>
+          example
+        </li>
+      </ul>
     </div>
   )
 }

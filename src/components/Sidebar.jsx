@@ -3,7 +3,7 @@ import { AppContext } from "../context/appContext";
 import { useContext } from "react";
 
 const Sidebar = () => {
-  const {selectedComponent, setSelectedComponent, sidebarItems } = useContext(AppContext);
+  const {setSelectedComponent, sidebarItems } = useContext(AppContext);
 
   const handleComponentLists = (e) => {
     const clickedComponent = sidebarItems.filter(item => item.name === e.target.getAttribute("name"))[0]?.component;
