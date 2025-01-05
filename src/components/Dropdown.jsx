@@ -1,7 +1,8 @@
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 const Dropdown = ({ options, value, onChange }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef();
 
   const toggleDropdown = (e) => {
     if (e.type === "keydown" && e.key !== "Enter") return;
@@ -14,8 +15,21 @@ const Dropdown = ({ options, value, onChange }) => {
     setIsOpen(!isOpen);
   }
 
+  useEffect(() => {
+    const toggleDropdownIfClickOutside = (e) => {
+      if(!dropdownRef.current.contains(e.target)) {
+        setIsOpen(false);
+      }
+    }
+    document.addEventListener("click", toggleDropdownIfClickOutside, true);
+
+    return () => {
+      document.removeEventListener("click", toggleDropdownIfClickOutside);
+    }
+  }, [])
+  
   return (
-    <div className="cursor-pointer">
+    <div className="cursor-pointer" ref={dropdownRef}>
       <div
         className="flex border rounded bg-white p-2 text-black w-fit min-w-28"
         onClick={e => toggleDropdown(e)}
@@ -32,7 +46,6 @@ const Dropdown = ({ options, value, onChange }) => {
             <div key={index} tabIndex="0" className="hover:bg-blue-500 px-2 z-10" onClick={e => handleSelectOption(e, option)} onKeyDown={e => handleSelectOption(e, option)}>{option.label}</div>
           ))}
         </div>
-        <div className={`absolute inset-0 cursor-pointer ${!isOpen && "hidden"}`} onClick={e => toggleDropdown(e)}></div>
       </div>
     </div>
   )
