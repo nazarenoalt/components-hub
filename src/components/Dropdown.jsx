@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react"
+import { useCallback, useEffect, useRef, useState } from "react"
 
 const Dropdown = ({ options, value, onChange }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,25 +9,27 @@ const Dropdown = ({ options, value, onChange }) => {
     setIsOpen(!isOpen);
   };
 
+
+
   const handleSelectOption = (e, option) => {
     if (e.type == "keydown" && e.key !== "Enter") return;
     onChange(option);
     setIsOpen(!isOpen);
   }
 
-  useEffect(() => {
-    const toggleDropdownIfClickOutside = (e) => {
-      if(!dropdownRef.current.contains(e.target)) {
-        setIsOpen(false);
-      }
+  const toggleDropdownIfClickOutside = useCallback((e) => {
+    if (!dropdownRef?.current?.contains(e.target)) {
+      setIsOpen(false);
     }
-    document.addEventListener("click", toggleDropdownIfClickOutside, true);
-
-    return () => {
-      document.removeEventListener("click", toggleDropdownIfClickOutside);
-    }
-  }, [])
+  }, [dropdownRef, setIsOpen]);
   
+  useEffect(() => {
+    document.addEventListener("click", toggleDropdownIfClickOutside, true);
+    return () => {
+      document.removeEventListener("click", toggleDropdownIfClickOutside, true);
+    };
+  }, [toggleDropdownIfClickOutside]);
+
   return (
     <div className="cursor-pointer" ref={dropdownRef}>
       <div
