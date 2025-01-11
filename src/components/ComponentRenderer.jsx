@@ -3,11 +3,11 @@ import { AppContext } from "../context/appContext";
 
 const ComponentRenderer = () => {
   const { selectedComponent } = useContext(AppContext);
-
+  
   return (
-    <div className="w-screen h-full bg-gray-900 text-white p-4">
+    <main className="flex-1 ml-60 bg-gray-900 min-h-screen text-white p-4">
       {selectedComponent}
-    </div>
+    </main>
   );
 };
 

@@ -554,8 +554,28 @@ video {
   display: none;
 }
 
+.fixed {
+  position: fixed;
+}
+
 .absolute {
   position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.inset-0 {
+  inset: 0px;
+}
+
+.left-0 {
+  left: 0px;
+}
+
+.top-0 {
+  top: 0px;
 }
 
 .z-10 {
@@ -566,24 +586,52 @@ video {
   margin-top: 1rem;
 }
 
+.ml-60 {
+  margin-left: 15rem;
+}
+
 .flex {
   display: flex;
+}
+
+.grid {
+  display: grid;
 }
 
 .hidden {
   display: none;
 }
 
-.h-full {
-  height: 100%;
-}
-
 .h-screen {
   height: 100vh;
 }
 
+.max-h-\[70vh\] {
+  max-height: 70vh;
+}
+
+.min-h-40 {
+  min-height: 10rem;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.min-h-full {
+  min-height: 100%;
+}
+
+.min-h-\[100vh\] {
+  min-height: 100vh;
+}
+
 .w-60 {
   width: 15rem;
+}
+
+.w-96 {
+  width: 24rem;
 }
 
 .w-fit {
@@ -599,16 +647,48 @@ video {
   min-width: 7rem;
 }
 
+.flex-1 {
+  flex: 1 1 0%;
+}
+
 .cursor-pointer {
   cursor: pointer;
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-cols-\[15rem\2c \] {
+  grid-template-columns: 15rem ;
+}
+
+.grid-cols-\[15rem_1fr\] {
+  grid-template-columns: 15rem 1fr;
+}
+
+.grid-cols-12 {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
 }
 
 .flex-col {
   flex-direction: column;
 }
 
+.justify-center {
+  justify-content: center;
+}
+
 .gap-2 {
   gap: 0.5rem;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-scroll {
+  overflow: scroll;
 }
 
 .rounded {
@@ -645,6 +725,11 @@ video {
 .border-yellow-500 {
   --tw-border-opacity: 1;
   border-color: rgb(234 179 8 / var(--tw-border-opacity, 1));
+}
+
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
 }
 
 .bg-blue-400 {
@@ -710,13 +795,29 @@ video {
   padding-bottom: 0.25rem;
 }
 
+.pb-4 {
+  padding-bottom: 1rem;
+}
+
 .pt-4 {
   padding-top: 1rem;
+}
+
+.pt-40 {
+  padding-top: 10rem;
+}
+
+.pl-60 {
+  padding-left: 15rem;
 }
 
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+.text-\[40px\] {
+  font-size: 40px;
 }
 
 .font-semibold {
@@ -751,6 +852,10 @@ video {
 .text-yellow-500 {
   --tw-text-opacity: 1;
   color: rgb(234 179 8 / var(--tw-text-opacity, 1));
+}
+
+.opacity-25 {
+  opacity: 0.25;
 }
 
 .transition-all {
@@ -807,4 +912,14 @@ video {
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+@media (min-width: 1024px) {
+  .lg\:w-\[700px\] {
+    width: 700px;
+  }
+
+  .lg\:p-8 {
+    padding: 2rem;
+  }
 }
