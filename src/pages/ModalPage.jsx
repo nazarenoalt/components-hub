@@ -14,7 +14,7 @@ const ModalPage = () => {
       {isModalOpen && (
         <Modal onClick={handleClick}>
           <h2 className="text-[40px] font-semibold pb-4 ">Oops!</h2>
-          <div className="pb-4">{text}</div>
+          <div className="pb-4">Uhhm... somthng happened, Idk look what you did bro</div>
           <Button onClick={handleClick}>Understood</Button>
         </Modal>
         )}

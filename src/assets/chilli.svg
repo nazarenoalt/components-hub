@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300" style="background-color: black;">
+  <!-- Outer Neon Glow -->
+  <defs>
+    <filter id="neon-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Chili Pepper -->
+  <path 
+    d="M150 200 C140 170, 160 140, 170 120 C175 110, 190 100, 200 120 C210 140, 190 160, 180 200 Z"
+    fill="red" 
+    stroke="white" 
+    stroke-width="2"
+    filter="url(#neon-glow)"
+  />
+
+  <!-- Chili Stem -->
+  <path 
+    d="M170 120 C165 110, 165 100, 170 95 C175 90, 185 90, 190 100 C185 105, 180 110, 175 115 Z"
+    fill="lime" 
+    stroke="white" 
+    stroke-width="2"
+    filter="url(#neon-glow)"
+  />
+
+  <!-- Highlight -->
+  <path 
+    d="M152 195 C148 175, 158 150, 166 130"
+    stroke="white" 
+    stroke-width="2"
+    fill="none"
+    filter="url(#neon-glow)"
+  />
+
+  <!-- Text -->
+  <text 
+    x="50%" y="280" 
+    text-anchor="middle" 
+    font-size="24" 
+    fill="white" 
+    font-family="Arial"
+    filter="url(#neon-glow)"
+  >
+    Spicy Neon
+  </text>
+</svg>

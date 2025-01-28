@@ -25,7 +25,7 @@ const Modal = ({ children, onClick }) => {
     <div className="z-100 fixed inset-0 flex justify-center pt-40">
       <div className="bg-black absolute inset-0 opacity-25"></div>
       <div
-        className="bg-white p-4 absolute rounded w-96 max-h-[70vh] lg:w-[700px] lg:p-8 min-h-40 text-black overflow-scroll"
+        className="bg-white p-4 absolute rounded w-96 max-h-[70vh] lg:w-[700px] lg:p-8 min-h-40 text-black overflow-y-scroll overflow-x-hidden"
         tabIndex="0"
         ref={modalRef}
       >
