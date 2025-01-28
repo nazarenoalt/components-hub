@@ -9,6 +9,7 @@ const TablePage = () => {
     {name: "Email", width: 100},
     {name: "Age", width: 100},
   ]
+  
   return (
     <div>
       <Table columns={columns} editable>
@@ -23,7 +24,7 @@ const TablePage = () => {
           <div>Software Engineer</div>
           <div>jere.plopi@gmail.com</div>
           <div>32</div>
-          </TableItem>
+        </TableItem>
         <TableItem>
           <div>Nazareno Aznar</div>
           <div>Software Engineer</div>

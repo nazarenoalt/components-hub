@@ -3,7 +3,6 @@ import { useRef } from "react";
 const useResizeColumn = () => {
   const startXRef = useRef(0);
   const startWidth = useRef(0);
-  const screenWidth = window.innerWidth;
 
   const handleMouseMoveRef = useRef(null);
 
@@ -12,8 +11,7 @@ const useResizeColumn = () => {
     let newColumnWidth;
     if(startWidth.current + deltaX >= 50) newColumnWidth = startWidth.current + deltaX;
     if(startWidth.current + deltaX < 50) newColumnWidth = 50;
-    if(startWidth.current + deltaX > screenWidth) newColumnWidth = screenWidth;
-
+    
     const tableWidth = handleMouseMoveRef.current.columnState
       .filter(col => col.name != handleMouseMoveRef.current.colName)
       .reduce((acc, column) => acc + column.width, 0)
