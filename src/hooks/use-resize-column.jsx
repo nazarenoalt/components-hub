@@ -9,20 +9,20 @@ const useResizeColumn = () => {
 
   const handleMouseMove = (e) => {
     const deltaX = e.clientX - startXRef.current;
-    let newRowWidth;
-    if(startWidth.current + deltaX >= 50) newRowWidth = startWidth.current + deltaX;
-    if(startWidth.current + deltaX < 50) newRowWidth = 50;
-    if(startWidth.current + deltaX > screenWidth) newRowWidth = screenWidth;
+    let newColumnWidth;
+    if(startWidth.current + deltaX >= 50) newColumnWidth = startWidth.current + deltaX;
+    if(startWidth.current + deltaX < 50) newColumnWidth = 50;
+    if(startWidth.current + deltaX > screenWidth) newColumnWidth = screenWidth;
 
     const tableWidth = handleMouseMoveRef.current.columnState
       .filter(col => col.name != handleMouseMoveRef.current.colName)
       .reduce((acc, column) => acc + column.width, 0)
-      + newRowWidth;
+      + newColumnWidth;
 
     handleMouseMoveRef.current.setColumnState((prev) => {
       return prev.map((column) => {
         if (column.name === handleMouseMoveRef.current.colName) {
-          if(tableWidth <= window.innerWidth) return { ...column, width: newRowWidth };
+          if(tableWidth <= window.innerWidth) return { ...column, width: newColumnWidth };
         }
         return column;
       });

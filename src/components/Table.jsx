@@ -1,6 +1,6 @@
 import React, {  useState } from "react";
 import { getColumnStyles } from "../utils/tableUtils";
-import useResizeColumn from "../hooks/use-column-width";
+import useResizeColumn from "../hooks/use-resize-column";
 
 const Table = ({ children, columns, editable }) => {
   const [columnState, setColumnState] = useState(columns);

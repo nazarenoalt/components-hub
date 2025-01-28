@@ -8,7 +8,7 @@ import TablePage from "../pages/TablePage";
 export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
-  const [selectedComponent, setSelectedComponent] = useState(ButtonPage);
+  const [selectedComponent, setSelectedComponent] = useState(TablePage);
   const [columnState, setColumnState] = useState();
 
   const contextValue = {
